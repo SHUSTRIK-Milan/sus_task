@@ -1,6 +1,5 @@
 import {Model} from 'objection';
 import Knex from 'knex';
-import SERVERS from './register.js';
 import SECRET from './secret.js';
 import grpc from '@grpc/grpc-js';
 import protoLoader from '@grpc/proto-loader';
@@ -96,7 +95,7 @@ function main_server() {
         read: db_read,
         delete: db_delete
     });
-    server.bindAsync('0.0.0.0:50051', grpc.ServerCredentials.createInsecure(), () => {
+    server.bindAsync('localhost:50051', grpc.ServerCredentials.createInsecure(), () => {
         server.start();
     });
 }
