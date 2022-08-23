@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "paths": {
+            "#src/*": [
+                "./src/*"
+            ],
+            "#client-lib/*": [
+                "./src/client/lib/*"
+            ],
+            "#server-lib/*": [
+                "./src/server/lib/*"
+            ],
+            "#lib/*": [
+                "./src/lib/*"
+            ],
+            "#configs/*": [
+                "./configs/*"
+            ],
+            "#static/*": [
+                "./static/*"
+            ]
+        }
+    }
+}
