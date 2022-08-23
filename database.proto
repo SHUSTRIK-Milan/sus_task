@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.database";
+option java_outer_classname = "DatabaseProto";
+option objc_class_prefix = "HLW";
+
+package database;
+
+service Database {
+  rpc create (CreateRequest) returns (CreateReply) {}
+  rpc update (UpdateRequest) returns (UpdateReply) {}
+  rpc read (ReadRequest) returns (ReadReply) {}
+  rpc delete (DeleteRequest) returns (DeleteReply) {}
+}
+
+message CreateRequest {
+  string name = 1;
+}
+message CreateReply {
+  string message = 1;
+}
+
+message UpdateRequest {
+    int32 id = 1;
+    string name = 2;
+}
+message UpdateReply {
+    string message = 1;
+}
+
+message ReadRequest {
+    int32 id = 1;
+}
+message ReadReply {
+    string message = 1;
+}
+
+message DeleteRequest {
+    int32 id = 1;
+}
+message DeleteReply {
+    string message = 1;
+}

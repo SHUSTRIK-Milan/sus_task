@@ -1,0 +1,17 @@
+{
+  "name": "sus",
+  "version": "1.0.0",
+  "description": "",
+  "main": "init.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "knex": "^2.2.0",
+    "objection": "^3.0.1",
+    "pg": "^8.7.3"
+  },
+  "type": "module"
+}
