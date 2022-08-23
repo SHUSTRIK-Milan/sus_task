@@ -1,5 +1,4 @@
 export default {
-    password: "2209",
     knex: {
         client: 'pg',
         version: '7.2',
@@ -7,7 +6,7 @@ export default {
             host: '127.0.0.1',
             port: 5432,
             user: 'postgres',
-            password: SECRET.password,
+            password: "2209",
             database: 'sus_database'
         }
     },

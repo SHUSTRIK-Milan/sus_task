@@ -5,7 +5,7 @@ export class KnexManager {
     constructor (config) {
 		this.knex = Knex(config)
 
-        Model.knex(knex);
+        Model.knex(this.knex);
 
         class Server extends Model {
             static get tableName() {
@@ -16,11 +16,11 @@ export class KnexManager {
 	}
 
     async createSchema() {
-        if(await knex.schema.hasTable('servers')) {
+        if(await this.knex.schema.hasTable('servers')) {
             return;
         }
     
-        await knex.schema.createTable('servers', table => {
+        await this.knex.schema.createTable('servers', table => {
             table.increments('id').primary();
             table.string('name');
         });

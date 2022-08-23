@@ -3,7 +3,7 @@ import protoLoader from '@grpc/proto-loader';
 
 export class PackageDefinition {
     packageDefinition = protoLoader.loadSync(
-        "#src/database.proto",
+        "src/protos/database.proto",
         {
             keepCase: true,
             longs: String,
@@ -11,5 +11,5 @@ export class PackageDefinition {
             defaults: true,
             oneofs: true
         });
-    database_proto = grpc.loadPackageDefinition(packageDefinition).database;
+    database_proto = grpc.loadPackageDefinition(this.packageDefinition).database;
 }
