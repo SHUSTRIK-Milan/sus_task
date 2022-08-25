@@ -10,18 +10,18 @@ const database_proto = packageDefinition.database_proto
 async function main() {
     let client = new database_proto.Database(CONFIG.address, grpc.credentials.createInsecure());
 
-    /* await client.create({name: "hello"}, function(err, response) {
+    /* await client.create({name: "arthas"}, function(err, response) {
         console.log(response.message);
     }); */
-    /* await client.update({id: 1, name: "hello33"}, function(err, response) {
+    /* await client.update({id: 1, name: "stul"}, function(err, response) {
         console.log(response.message);
     }); */
-    await client.read({id: 5}, function(err, response) {
+    /* await client.read({id: 1}, function(err, response) {
+        console.log(response.message);
+    }); */
+    await client.delete({id: 1}, function(err, response) {
         console.log(response.message);
     });
-    /* await client.delete({id: 1}, function(err, response) {
-        console.log(response.message);
-    }); */
 }
 
 main();  
